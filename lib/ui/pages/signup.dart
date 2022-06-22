@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/ui/pages/mainHome.dart';
 import '../../shared/theme.dart';
 
 class SignUp extends StatefulWidget {
@@ -181,7 +182,9 @@ class _SignUpState extends State<SignUp> {
                 activeColor = value ? primaryColor : redColor;
               });
             },
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/nav');
+            },
             child: Text(
               'Sign Up',
               style: textWhite.copyWith(

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/ui/pages/mainHome.dart';
 import 'package:travel_app/ui/pages/signin.dart';
 import 'package:travel_app/ui/pages/signup.dart';
 import 'package:travel_app/ui/pages/started_page.dart';
+import 'package:travel_app/ui/widgets/Navbar.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,6 +18,7 @@ class MyApp extends StatelessWidget {
         '/': (context) => started_Page(),
         '/sign-up': (context) => SignUp(),
         '/sign-in': (context) => SignIn(),
+        '/nav': (context) => Navbar(),
       },
     );
   }
