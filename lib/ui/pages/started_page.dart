@@ -45,7 +45,9 @@ class started_Page extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 24.0),
           child: ElevatedButton.icon(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/sign-up');
+            },
             label: Icon(
               Icons.arrow_right_alt,
               color: whiteColor,
