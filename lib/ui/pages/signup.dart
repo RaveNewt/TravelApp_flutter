@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/ui/pages/mainHome.dart';
+import 'package:travel_app/ui/widgets/CustomButton.dart';
+import 'package:travel_app/ui/widgets/CustomTextField.dart';
 import '../../shared/theme.dart';
 
 class SignUp extends StatefulWidget {
@@ -27,173 +29,40 @@ class _SignUpState extends State<SignUp> {
 
     Widget inputSection() {
       Widget nameInput() {
-        return Container(
-            margin: EdgeInsets.only(bottom: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Full Name',
-                  style: textPurple.copyWith(
-                    fontSize: 14,
-                    fontWeight: semiBold,
-                  ),
-                ),
-                SizedBox(
-                  height: 6,
-                ),
-                TextField(
-                  cursorColor: primaryColor,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    hintText: 'Your full name',
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: primaryColor,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ));
+        return CustomTextField(
+          title: 'Full Name',
+          hintText: 'Your full name',
+          obscureText: false,
+        );
       }
 
       Widget emailInput() {
-        return Container(
-            margin: EdgeInsets.only(bottom: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Email',
-                  style: textPurple.copyWith(
-                    fontSize: 14,
-                    fontWeight: semiBold,
-                  ),
-                ),
-                SizedBox(
-                  height: 6,
-                ),
-                TextField(
-                  cursorColor: primaryColor,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    hintText: 'xxxxx@gmail.com',
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: primaryColor,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ));
+        return CustomTextField(
+          title: 'Email',
+          hintText: 'xxx@gmail.com',
+          obscureText: false,
+        );
       }
 
       Widget passwordInput() {
-        return Container(
-            margin: EdgeInsets.only(bottom: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Password',
-                  style: textPurple.copyWith(
-                    fontSize: 14,
-                    fontWeight: semiBold,
-                  ),
-                ),
-                SizedBox(
-                  height: 6,
-                ),
-                TextField(
-                  cursorColor: primaryColor,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    hintText: 'Your password',
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: primaryColor,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ));
+        return CustomTextField(
+          title: 'Password',
+          hintText: 'Your Password',
+          obscureText: true,
+        );
       }
 
       Widget hobbyInput() {
-        return Container(
-            margin: EdgeInsets.only(bottom: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Your Hobby',
-                  style: textPurple.copyWith(
-                    fontSize: 14,
-                    fontWeight: semiBold,
-                  ),
-                ),
-                SizedBox(
-                  height: 6,
-                ),
-                TextField(
-                  cursorColor: primaryColor,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    hintText: 'Photography',
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(
-                        color: primaryColor,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ));
+        return CustomTextField(
+            title: 'Hobby', hintText: 'fill your hooby', obscureText: false);
       }
 
       Widget submitButton() {
-        return Container(
-          width: double.infinity,
-          height: 48,
-          child: TextButton(
-            style: TextButton.styleFrom(
-                backgroundColor: primaryColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                )),
-            onHover: (value) {
-              setState(() {
-                activeColor = value ? primaryColor : redColor;
-              });
-            },
+        return CustomButton(
+            title: 'Sign Up',
             onPressed: () {
               Navigator.pushNamed(context, '/nav');
-            },
-            child: Text(
-              'Sign Up',
-              style: textWhite.copyWith(
-                fontSize: 20,
-                fontWeight: bold,
-              ),
-            ),
-          ),
-        );
+            });
       }
 
       return Container(
