@@ -14,7 +14,9 @@ class _MainHomeState extends State<MainHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text('Home')),
+      body: ListView(
+        
+      ),
     );
   }
 }
